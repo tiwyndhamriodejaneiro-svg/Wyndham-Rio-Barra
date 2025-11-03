@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wyndham Rio Barra</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,75 +11,74 @@
   <!-- LOADER -->
   <div id="loader">
     <div class="spinner"></div>
-    <p>Carregando experiência...</p>
+    <p data-i18n="loader.loading">Carregando experiência...</p>
   </div>
 
   <!-- CABEÇALHO -->
   <header class="header">
     <div class="logo">
-      <img src="images/logo.jpg" alt="Wyndham Logo">
-      <span>Wyndham Rio Barra</span>
+      <img src="images/logo.jpg" alt="Wyndham Logo" />
+      <span data-i18n="brand">Wyndham Rio Barra</span>
     </div>
-    <div class="menu-icon" id="menuToggle">&#9776;</div>
+
+    <!-- 🔽 Troquei o select por bandeiras -->
+   <div class="toolbar">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <!-- Emojis 
+    <button class="flag" data-lang="pt" aria-label="Português" title="Português">🇧🇷</button>
+    <button class="flag" data-lang="en" aria-label="English" title="English">🇺🇸</button>
+    <button class="flag" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
+  -->
+    
+    <button class="flag" data-lang="pt"><img src="images/brazil.png" alt="Português" /></button>
+    <button class="flag" data-lang="en"><img src="images/england.png" alt="English" /></button>
+    <button class="flag" data-lang="es"><img src="images/spain.png" alt="Español" /></button>
+   
+  </div>
+</div>
+
+
+    <div class="menu-icon" id="menuToggle" aria-label="Abrir menu">&#9776;</div>
     <nav class="nav-links" id="navLinks">
-      <!-- <a href="#">Início</a>
-      <a href="#">Acomodações</a>
-      <a href="#">Contato</a>-->
-      <a href="#">Galeria</a>
+      <a href="#" data-i18n="nav.gallery">Galeria</a>
     </nav>
   </header>
 
-  <!-- CARROSSEL -->
+  <!-- CARROSSEL (seu conteúdo permanece igual) -->
   <section class="hero">
-    <!-- SLIDE 1 -->
     <div class="slide active">
       <video src="videos/videohotelwyndham.mp4" autoplay loop muted playsinline></video>
       <div class="overlay"></div>
-
       <div class="hero-content">
-        <h1>Uma Experiência Exclusiva</h1>
+        <h1 data-i18n="slides.s1.title">Uma Experiência Exclusiva</h1>
       </div>
-
       <a href="https://wa.me/552131398045?text=Olá!."
-         target="_blank" class="assistente-btn-fixo">Falar com Assistente</a>
+         target="_blank" class="assistente-btn-fixo" data-i18n="cta.whatsapp">Falar com Assistente</a>
     </div>
 
-    <!-- SLIDE 2 -->
     <div class="slide">
-      <img src="images/praias-barra-da-tijuca.webp" alt="Piscina">
+      <img src="images/praias-barra-da-tijuca.webp" alt="Piscina" />
       <div class="overlay"></div>
-
       <div class="hero-content">
-        <h1>Sinta-se em Casa</h1>
+        <h1 data-i18n="slides.s2.title">Sinta-se em Casa</h1>
       </div>
-
       <a href="https://wa.me/552131398045?text=Olá!%20Gostaria%20de%20falar%20com%20o%20assistente."
-         target="_blank" class="assistente-btn-fixo">Falar com Assistente</a>
+         target="_blank" class="assistente-btn-fixo" data-i18n="cta.whatsapp">Falar com Assistente</a>
     </div>
 
-    <!-- SLIDE 3 -->
     <div class="slide">
-      <img src="images/frentehotel2.png" alt="Quarto">
+      <img src="images/frentehotel2.png" alt="Fachada do Hotel" />
       <div class="overlay"></div>
-
       <div class="hero-content">
-        <h1>Conforto e Sofisticação</h1>
+        <h1 data-i18n="slides.s3.title">Conforto e Sofisticação</h1>
       </div>
-
       <a href="https://wa.me/552131398045?text=Olá!%20Gostaria%20de%20falar%20com%20o%20assistente."
-         target="_blank" class="assistente-btn-fixo">Falar com Assistente</a>
+         target="_blank" class="assistente-btn-fixo" data-i18n="cta.whatsapp">Falar com Assistente</a>
     </div>
   </section>
 
-  <!-- BOTÃO WHATSAPP FLUTUANTE -->
-  <!--
-  <a href="https://wa.me/552131398045?text=Olá!%20Gostaria%20de%20falar%20com%20o%20assistente."
-     class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-  -->
-
+  <!-- JS externos -->
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
-
