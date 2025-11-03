@@ -94,8 +94,13 @@ html, body {
     border-radius: 10px;
   }
   .nav-links a { margin: 10px 0; }
-  .menu-icon { display: block; }
-}
+  .menu-icon { 
+  display: block;
+  display: block;
+  margin-left: 8px;
+  margin-right: -21px;
+    } }
+
 
 /* HERO */
 .hero {
@@ -270,9 +275,9 @@ html, body {
   justify-content: center;
   font-size: 22px;
   font-weight: 600;
-  color: #0f4c81;
+
   transition: all 0.25s ease-in-out;
-  box-shadow: 0 2px 6px rgba(15, 76, 129, 0.15);
+  box-shadow: 0 2px 6px rgba(243, 0, 0, 0.15);
   line-height: 1.1;
   font-family: "Poppins", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
 }
@@ -289,29 +294,114 @@ html, body {
 /* Estado ativo */
 .flag.active {
   background: linear-gradient(135deg, #1c6aa3, #0f4c81);
-  color: #ffffff;
+  color: #ff0000;
   border: 1px solid #0f4c81;
   box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.25);
   transform: translateY(-1px);
 }
 
-/* Imagens SVG dentro do botão */
+/* Tamanho da imagem da bandeira */
 .flag img {
-  width: 26px;
-  height: 26px;
+  width: 25px;                /* ajuste o tamanho que preferir: 20–26px */
+  height: 22px;
   display: block;
   object-fit: cover;
   pointer-events: none;
 }
-
 /* Responsivo */
 @media (max-width: 600px) {
-  .lang-switch {
-    gap: 23px;
-    padding: 8px 0px;
-  }
+.lang-switch {
+  display: flex;
+  gap: 15px;
+  /* Remover qualquer fundo/blur do container */
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
   .flag {
-        font-size: 12px;
-        padding: 1px 1px;
+  all: unset;                 /* zera estilos nativos do <button> */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;                /* ajuste fino do tamanho do “hit area” */
+  height: 20px;
+  cursor: pointer;
+  border-radius: 6px;         /* só para o foco/hover ficar bonito */
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  line-height: 1;
+}
+
+}
+/* === Link Instagram no menu (melhorado) === */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+}
+
+/* Ícone ou emoji */
+.social-link img,
+.social-link .emoji {
+  width: 22px;
+  height: 25px;
+  object-fit: contain;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+/* Remove filtro branco que deixava estranho */
+.social-link img {
+  filter: none !important;
+}
+
+/* Hover com leve destaque “instagram” */
+.social-link:hover {
+  color: #fff8fa; /* rosa Instagram */
+  transform: translateY(-2px);
+  background: rgba(243, 243, 243, 0.1); /* leve brilho */
+}
+
+.social-link:hover img,
+.social-link:hover .emoji {
+  
+  transform: scale(1.15);
+}
+
+/* Modo ativo/foco */
+.social-link:focus-visible {
+  outline: 2px solid #ff4081;
+  outline-offset: 3px;
+}
+.social-link img {
+  width: 40px;
+  height: 29px;
+  object-fit: contain;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .social-link {
+    margin-top: 8px;
+    font-size: 150px;
+  }
+  .social-link img,
+  .social-link .emoji {
+    width: 35px;
+    height: 20px;
   }
 }
+
+
