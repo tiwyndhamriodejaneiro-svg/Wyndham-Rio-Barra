@@ -78,6 +78,7 @@ html, body {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
+  margin-right: -59px;
 }
 
 .nav-links a:hover { color: #00e676; }
@@ -248,7 +249,7 @@ html, body {
   padding: 0;
   box-shadow: none;
   font-size: 10px;
-  margin-right: 45px;
+  margin-right: 90px;
 }
 
 /* Bandeiras (botões) */
@@ -328,6 +329,7 @@ html, body {
   transition: transform 0.25s ease;
   filter: none !important; /* mantém cor natural */
   margin-bottom: 18px;
+  
 }
 
 /* Hover desktop */
@@ -367,7 +369,7 @@ html, body {
     height: 44px;
     font-size: 44px;         /* caso use emoji 📸 */
     transform: none;
-    margin-left: 40px;
+    margin-left: -10px;
     margin-bottom: 15px;
   }
 
