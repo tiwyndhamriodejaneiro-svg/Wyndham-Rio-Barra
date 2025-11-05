@@ -1,4 +1,6 @@
-/* RESET */
+/* =======================
+   RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +14,9 @@ html, body {
   overflow-x: hidden;
 }
 
-/* LOADER */
+/* =======================
+   LOADER
+======================= */
 #loader {
   position: fixed;
   inset: 0;
@@ -40,11 +44,13 @@ html, body {
   100% { transform: rotate(360deg); }
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 .header {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100%; /* corrigido (era 109%) */
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -57,7 +63,7 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-      margin-left: -23px;
+  margin-left: -23px;
 }
 
 .logo img { height: 25px; }
@@ -82,27 +88,9 @@ html, body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 30px;
-    background: rgba(0,0,0,0.8);
-    padding: 20px;
-    border-radius: 10px;
-  }
-  .nav-links a { margin: 10px 0; }
-  .menu-icon { 
-  display: block;
-  display: block;
-  margin-left: 8px;
-  margin-right: -21px;
-    } }
-
-
-/* HERO */
+/* =======================
+   HERO
+======================= */
 .hero {
   position: relative;
   width: 100%;
@@ -135,7 +123,7 @@ html, body {
 
 .hero-content {
   position: absolute;
-  top: 40%; /* título mais no meio da tela */
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -144,24 +132,26 @@ html, body {
   animation: fadeInUp 1.2s ease;
 }
 
-.hero-content h1 {
+.hero-content h1 
+{
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 20px;
-}
+  margin-bottom: 20px;}
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translate(-50%, -40%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* BOTÃO SEPARADO - HERO */
+/* =======================
+   BOTÃO HERO (Assistente)
+======================= */
 .assistente-btn-fixo {
   position: absolute;
-  bottom: 40px;          /* distância da base da hero */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 12px 28px;    /* padding inicial */
+  padding: 12px 28px;
   border-radius: 25px;
   background-color: #00e676;
   color: black;
@@ -171,9 +161,9 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;       /* fonte inicial */
-  min-width: 180px;      /* largura mínima */
-  max-width: 90%;        /* largura máxima adaptável ao mobile */
+  font-size: 1rem;
+  min-width: 180px;
+  max-width: 90%;
   z-index: 15;
   transition: transform 0.3s, background 0.3s, padding 0.3s;
 }
@@ -183,8 +173,9 @@ html, body {
   background-color: #00c853;
 }
 
-
-/* WHATSAPP BUTTON */
+/* =======================
+   WHATSAPP FLOAT
+======================= */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -208,7 +199,9 @@ html, body {
 
 .whatsapp-float:hover { transform: scale(1.1); }
 
-/* RESPONSIVIDADE */
+/* =======================
+   RESPONSIVIDADE BASE
+======================= */
 @media (max-width: 1024px) {
   .assistente-btn-fixo {
     padding: 10px 24px;
@@ -236,172 +229,156 @@ html, body {
   }
 }
 
-/* Container dos botões */
-.toolbar {
-  display: flex;              /* Ativa o flexbox */
-  flex-direction: row;        /* Alinha os itens na horizontal */
-  align-items: center;        /* Centraliza verticalmente */
-  justify-content: flex-start;/* Ou center / flex-end, conforme quiser */
-  gap: 10px;                  /* Espaço entre os botões */
-  padding: 6px 12px;
-}
-
-
-/* ====== SELETOR DE IDIOMA - HÍBRIDO ====== */
+/* =======================
+   TOOLBAR / LANGUAGE SWITCH (limpo)
+======================= */
 .toolbar {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1px 15px;
+  justify-content: center;
+ 
 }
 
 .lang-switch {
   display: flex;
-  flex-direction: row;
   gap: 12px;
-  backdrop-filter: blur(80px);
-  border-radius: 140px;
- 
- 
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  font-size: 10px;
+  margin-right: 45px;
 }
 
-/* Bandeiras (emojis ou imagens) */
+/* Bandeiras (botões) */
 .flag {
- 
-  cursor: pointer;
-  
-  display: flex;
+  all: unset;                 /* remove estilos nativos */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  font-weight: 600;
-
-  transition: all 0.25s ease-in-out;
-  box-shadow: 0 2px 6px rgba(243, 0, 0, 0.15);
-  line-height: 1.1;
-  font-family: "Poppins", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+  width: 34px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 6px;
+  line-height: 1;
+  transition: outline 0.2s ease, transform 0.2s ease;
+ font-size: 15px;
 }
 
-/* Efeito hover */
-.flag:hover {
-  background: #0f4c81;
-  color: #ffffff;
-  border-color: #0f4c81;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(15, 76, 129, 0.3);
-}
-
-/* Estado ativo */
-.flag.active {
-  background: linear-gradient(135deg, #1c6aa3, #0f4c81);
-  color: #ff0000;
-  border: 1px solid #0f4c81;
-  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.25);
-  transform: translateY(-1px);
-}
-
-/* Tamanho da imagem da bandeira */
 .flag img {
-  width: 25px;                /* ajuste o tamanho que preferir: 20–26px */
-  height: 22px;
+  width: 24px;
+  height: 24px;
   display: block;
   object-fit: cover;
   pointer-events: none;
 }
-/* Responsivo */
-@media (max-width: 600px) {
-.lang-switch {
-  display: flex;
-  gap: 15px;
-  /* Remover qualquer fundo/blur do container */
-  background: transparent !important;
-  backdrop-filter: none !important;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: none;
-}
-  .flag {
-  all: unset;                 /* zera estilos nativos do <button> */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;                /* ajuste fino do tamanho do “hit area” */
-  height: 20px;
-  cursor: pointer;
-  border-radius: 6px;         /* só para o foco/hover ficar bonito */
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  line-height: 1;
+
+/* Hover/foco: contorno sutil */
+.flag:hover,
+.flag:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+  transform: translateY(-1px);
 }
 
+
+
+/* Mobile flags menores */
+@media (max-width: 600px) {
+  .lang-switch { 
+    gap: 10px;
+    margin-left: 25px;
+   }
+  .flag {
+     width: 30px; 
+     height: 26px;
+   }
+  .flag img  { 
+    width: 22px; 
+    height: 22px;  
+   }
 }
-/* === Link Instagram no menu (melhorado) === */
+
+/* =======================
+   INSTAGRAM LINK (desktop + mobile harmonizado)
+======================= */
 .social-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 16px;         /* texto no desktop */
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding: 6px 10px;
+  padding: 6px 10px;       /* área de clique */
   border-radius: 8px;
   background: transparent;
+  transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease;
 }
 
-/* Ícone ou emoji */
+/* Ícone (imagem) ou emoji */
 .social-link img,
 .social-link .emoji {
-  width: 22px;
-  height: 25px;
+  width: 100px;             /* tamanho no desktop */
+  height: 28px;
   object-fit: contain;
+  line-height: 1;
   vertical-align: middle;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease;
+  filter: none !important; /* mantém cor natural */
+  margin-bottom: 18px;
 }
 
-/* Remove filtro branco que deixava estranho */
-.social-link img {
-  filter: none !important;
-}
-
-/* Hover com leve destaque “instagram” */
+/* Hover desktop */
 .social-link:hover {
-  color: #fff8fa; /* rosa Instagram */
-  transform: translateY(-2px);
-  background: rgba(243, 243, 243, 0.1); /* leve brilho */
+  color: #ff6fa3;
+  background: rgba(255, 111, 163, 0.12);
+  transform: translateY(-1px);
 }
 
 .social-link:hover img,
 .social-link:hover .emoji {
-  
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
-/* Modo ativo/foco */
+/* Acessibilidade */
 .social-link:focus-visible {
   outline: 2px solid #ff4081;
   outline-offset: 3px;
 }
-.social-link img {
-  width: 40px;
-  height: 29px;
-  object-fit: contain;
-}
 
-
-/* Mobile */
+/* ===== Mobile: destaque com ícone grande e sem texto ===== */
 @media (max-width: 768px) {
   .social-link {
-    margin-top: 8px;
-    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px auto 0 auto;
+    width: 64px;             /* botão circular */
+    height: 64px;
+    border-radius: 50%;
+    font-size: 0;            /* oculta texto, deixa só o ícone */
+    padding: 0;
   }
+
   .social-link img,
   .social-link .emoji {
-    width: 35px;
-    height: 20px;
+    width: 51px;             /* ícone maior no mobile */
+    height: 44px;
+    font-size: 44px;         /* caso use emoji 📸 */
+    transform: none;
+    margin-left: 40px;
+    margin-bottom: 15px;
+  }
+
+  .social-link:hover {
+    background: none;
+    transform: scale(1.03);
+  }
+
+  .social-link:hover img,
+  .social-link:hover .emoji {
+    transform: scale(1.10);
   }
 }
-
-
