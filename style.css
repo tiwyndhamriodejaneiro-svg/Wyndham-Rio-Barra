@@ -51,7 +51,7 @@ html, body {
   position: absolute;
   top: 0;
   width: 100%; /* corrigido (era 109%) */
-  padding: 20px 40px;
+  padding: 0px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -332,8 +332,7 @@ html, body {
 
 /* Hover desktop */
 .social-link:hover {
-  color: #ff6fa3;
-  background: rgba(255, 111, 163, 0.12);
+  color: #ff6fa3; 
   transform: translateY(-1px);
 }
 
