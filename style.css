@@ -1,6 +1,4 @@
-/* =======================
-   RESET
-======================= */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,11 +10,16 @@ html, body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  background: #000;
 }
 
-/* =======================
-   LOADER
-======================= */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== LOADER ===== */
 #loader {
   position: fixed;
   inset: 0;
@@ -44,14 +47,14 @@ html, body {
   100% { transform: rotate(360deg); }
 }
 
-/* =======================
-   HEADER
-======================= */
+/* ===== HEADER ===== */
 .header {
   position: absolute;
   top: 0;
-  width: 100%; /* corrigido (era 109%) */
-  padding: 0px 40px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,14 +66,15 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: -23px;
+  margin-left: -30;
 }
 
-.logo img { height: 25px; }
+.logo img { height: 30px; }
 
 .nav-links {
   display: flex;
   gap: 25px;
+  width: 100px;
 }
 
 .nav-links a {
@@ -78,7 +82,6 @@ html, body {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
-  margin-right: -59px;
 }
 
 .nav-links a:hover { color: #00e676; }
@@ -89,13 +92,12 @@ html, body {
   cursor: pointer;
 }
 
-/* =======================
-   HERO
-======================= */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -133,20 +135,18 @@ html, body {
   animation: fadeInUp 1.2s ease;
 }
 
-.hero-content h1 
-{
+.hero-content h1 {
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 20px;}
+  margin-bottom: 20px;
+}
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translate(-50%, -40%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* =======================
-   BOTÃO HERO (Assistente)
-======================= */
+/* ===== BOTÃO HERO ===== */
 .assistente-btn-fixo {
   position: absolute;
   bottom: 40px;
@@ -174,9 +174,7 @@ html, body {
   background-color: #00c853;
 }
 
-/* =======================
-   WHATSAPP FLOAT
-======================= */
+/* ===== WHATSAPP ===== */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -200,186 +198,111 @@ html, body {
 
 .whatsapp-float:hover { transform: scale(1.1); }
 
-/* =======================
-   RESPONSIVIDADE BASE
-======================= */
-@media (max-width: 1024px) {
-  .assistente-btn-fixo {
-    padding: 10px 24px;
-    font-size: 0.95rem;
-    bottom: 50px;
-  }
-}
-
-@media (max-width: 768px) {
-  .assistente-btn-fixo {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-    bottom: 60px;
-    min-width: 140px;
-  }
-}
-
-@media (max-width: 480px) {
-  .assistente-btn-fixo {
-    padding: 16px 16px;
-    font-size: 0.85rem;
-    bottom: 50px;
-    min-width: 120px;
-    margin-top: 40px;
-  }
-}
-
-/* =======================
-   TOOLBAR / LANGUAGE SWITCH (limpo)
-======================= */
+/* ===== LANGUAGE SWITCH ===== */
 .toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
- 
 }
 
 .lang-switch {
   display: flex;
   gap: 12px;
   background: transparent;
-  backdrop-filter: none;
-  border-radius: 0;
   padding: 0;
-  box-shadow: none;
-  font-size: 10px;
-  margin-right: 90px;
+  margin-right: 0;
 }
 
-/* Bandeiras (botões) */
 .flag {
-  all: unset;                 /* remove estilos nativos */
+  all: unset;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 28px;
+  flex-direction: column;
+  min-width: 36px;
+  height: auto;
+  padding: 4px 10px;
   cursor: pointer;
-  border-radius: 6px;
-  line-height: 1;
-  transition: outline 0.2s ease, transform 0.2s ease;
- font-size: 15px;
+  font-weight: 600;
+  font-size: 15px; /* tamanho original */
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
 }
 
-.flag img {
-  width: 24px;
-  height: 24px;
+.flag .underline {
   display: block;
-  object-fit: cover;
-  pointer-events: none;
+  font-size: 14px;
+  line-height: 10px;
+  margin-top: 2px;
+  color: #00e676;
 }
 
-/* Hover/foco: contorno sutil */
-.flag:hover,
-.flag:focus-visible {
-  outline: 2px solid rgba(255,255,255,0.8);
-  outline-offset: 2px;
-  transform: translateY(-1px);
-}
-
-
-
-/* Mobile flags menores */
-@media (max-width: 600px) {
-  .lang-switch { 
-    gap: 10px;
-    margin-left: 25px;
-   }
-  .flag {
-     width: 30px; 
-     height: 26px;
-   }
-  .flag img  { 
-    width: 22px; 
-    height: 22px;  
-   }
-}
-
-/* =======================
-   INSTAGRAM LINK (desktop + mobile harmonizado)
-======================= */
+/* ===== INSTAGRAM LINK ===== */
 .social-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   color: #fff;
   text-decoration: none;
-  font-size: 16px;         /* texto no desktop */
+  font-size: 16px;
   font-weight: 500;
-  padding: 6px 10px;       /* área de clique */
-  border-radius: 8px;
+  padding: 6px 10px;
   background: transparent;
-  transition: transform 0.25s ease, color 0.25s ease, background 0.25s ease;
+  border: none;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-/* Ícone (imagem) ou emoji */
 .social-link img,
 .social-link .emoji {
-  width: 100px;             /* tamanho no desktop */
+  width: 100px;  /* seu tamanho original */
   height: 28px;
   object-fit: contain;
   line-height: 1;
   vertical-align: middle;
   transition: transform 0.25s ease;
-  filter: none !important; /* mantém cor natural */
-  margin-bottom: 18px;
-  
+  filter: none !important;
+  margin-bottom: 18px; /* mantido como estava */
 }
 
-/* Hover desktop */
 .social-link:hover {
-  color: #ff6fa3; 
+  color: #fff; /* não muda a cor no hover */
   transform: translateY(-1px);
 }
 
-.social-link:hover img,
-.social-link:hover .emoji {
-  transform: scale(1.12);
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .lang-switch {
+     gap: 5px; 
+    }
+  .flag {
+    font-size: 15px;
+    padding: 4px 8px;
+  }
+  .flag .underline { font-size: 12px; }
 }
 
-/* Acessibilidade */
-.social-link:focus-visible {
-  outline: 2px solid #ff4081;
-  outline-offset: 3px;
-}
-
-/* ===== Mobile: destaque com ícone grande e sem texto ===== */
 @media (max-width: 768px) {
   .social-link {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 12px auto 0 auto;
-    width: 64px;             /* botão circular */
-    height: 64px;
-    border-radius: 50%;
-    font-size: 0;            /* oculta texto, deixa só o ícone */
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    font-size: 0;
     padding: 0;
+    background: transparent; /* removido o círculo rosa */
   }
 
   .social-link img,
   .social-link .emoji {
-    width: 51px;             /* ícone maior no mobile */
+    width: 51px;   /* tamanho original mobile */
     height: 44px;
-    font-size: 44px;         /* caso use emoji 📸 */
-    transform: none;
-    margin-left: -10px;
+    font-size: 44px;
+    margin-left: 60px;
     margin-bottom: 15px;
-  }
-
-  .social-link:hover {
-    background: none;
-    transform: scale(1.03);
-  }
-
-  .social-link:hover img,
-  .social-link:hover .emoji {
-    transform: scale(1.10);
   }
 }
