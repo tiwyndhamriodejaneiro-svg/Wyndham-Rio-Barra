@@ -149,7 +149,7 @@ img, video {
 /* ===== BOTÃO HERO ===== */
 .assistente-btn-fixo {
   position: absolute;
-  bottom: 40px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   padding: 12px 28px;
@@ -210,7 +210,7 @@ img, video {
   gap: 12px;
   background: transparent;
   padding: 0;
-  margin-right: 0;
+  margin-right: 80px;
 }
 
 .flag {
@@ -275,6 +275,7 @@ img, video {
 @media (max-width: 600px) {
   .lang-switch {
      gap: 5px; 
+     margin-right: 1px;
     }
   .flag {
     font-size: 15px;
